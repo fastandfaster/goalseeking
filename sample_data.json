@@ -1,0 +1,199 @@
+{
+  "_instructions": [
+    "=== ALTA PLAYOFF LINEUP OPTIMIZER — DATA TEMPLATE ===",
+    "League: 2026 Spring Sunday Women C-8",
+    "Format: 5 lines of doubles (10 players per match)",
+    "Matches: Sundays at 1:00 PM",
+    "Regular Season: Mar 16 - Apr 27, 2026 (7 weeks)",
+    "Playoffs Begin: May 3, 2026 | C-Flight City Finals: May 18, 2026",
+    "",
+    "HOW TO FILL THIS IN:",
+    "1. Log into altatennis.org → Member Portal → Team Dashboard",
+    "2. Go to your team schedule/match results",
+    "3. For each player, list every match they played:",
+    "   - match_date, line (1-5), partner name, result (W/L), score",
+    "4. Set available_for_playoffs to true/false for each player",
+    "5. Add captain preferences in captain_overrides section",
+    "6. Save and run: python lineup_optimizer.py sample_data.json"
+  ],
+  "team": {
+    "name": "YOUR TEAM NAME HERE",
+    "facility": "YOUR TENNIS CENTER HERE",
+    "league": "Sunday Women",
+    "season": "Spring 2026",
+    "level_flight": "C-8",
+    "num_lines": 5,
+    "notes": "Replace all sample data below with your actual team data from ALTA portal"
+  },
+  "players": [
+    {
+      "name": "Player 1",
+      "available_for_playoffs": true,
+      "notes": "",
+      "regular_season": [
+        { "match_date": "2026-03-16", "line": 1, "partner": "Player 2", "result": "W", "score": "6-3, 6-4" },
+        { "match_date": "2026-03-23", "line": 1, "partner": "Player 2", "result": "W", "score": "6-2, 7-5" },
+        { "match_date": "2026-03-30", "line": 1, "partner": "Player 2", "result": "L", "score": "4-6, 3-6" },
+        { "match_date": "2026-04-06", "line": 1, "partner": "Player 2", "result": "W", "score": "6-1, 6-3" },
+        { "match_date": "2026-04-13", "line": 1, "partner": "Player 2", "result": "W", "score": "6-4, 6-2" },
+        { "match_date": "2026-04-20", "line": 1, "partner": "Player 2", "result": "L", "score": "3-6, 4-6" },
+        { "match_date": "2026-04-27", "line": 1, "partner": "Player 2", "result": "W", "score": "7-5, 6-3" }
+      ]
+    },
+    {
+      "name": "Player 2",
+      "available_for_playoffs": true,
+      "notes": "",
+      "regular_season": [
+        { "match_date": "2026-03-16", "line": 1, "partner": "Player 1", "result": "W", "score": "6-3, 6-4" },
+        { "match_date": "2026-03-23", "line": 1, "partner": "Player 1", "result": "W", "score": "6-2, 7-5" },
+        { "match_date": "2026-03-30", "line": 1, "partner": "Player 1", "result": "L", "score": "4-6, 3-6" },
+        { "match_date": "2026-04-06", "line": 1, "partner": "Player 1", "result": "W", "score": "6-1, 6-3" },
+        { "match_date": "2026-04-13", "line": 1, "partner": "Player 1", "result": "W", "score": "6-4, 6-2" },
+        { "match_date": "2026-04-20", "line": 1, "partner": "Player 1", "result": "L", "score": "3-6, 4-6" },
+        { "match_date": "2026-04-27", "line": 1, "partner": "Player 1", "result": "W", "score": "7-5, 6-3" }
+      ]
+    },
+    {
+      "name": "Player 3",
+      "available_for_playoffs": true,
+      "notes": "",
+      "regular_season": [
+        { "match_date": "2026-03-16", "line": 2, "partner": "Player 4", "result": "W", "score": "7-5, 6-4" },
+        { "match_date": "2026-03-23", "line": 2, "partner": "Player 4", "result": "L", "score": "3-6, 6-4, 4-6" },
+        { "match_date": "2026-03-30", "line": 2, "partner": "Player 4", "result": "W", "score": "6-2, 6-3" },
+        { "match_date": "2026-04-06", "line": 2, "partner": "Player 4", "result": "W", "score": "6-4, 6-4" },
+        { "match_date": "2026-04-13", "line": 3, "partner": "Player 5", "result": "L", "score": "4-6, 3-6" },
+        { "match_date": "2026-04-20", "line": 2, "partner": "Player 4", "result": "W", "score": "6-1, 6-2" },
+        { "match_date": "2026-04-27", "line": 2, "partner": "Player 4", "result": "L", "score": "6-7, 4-6" }
+      ]
+    },
+    {
+      "name": "Player 4",
+      "available_for_playoffs": true,
+      "notes": "",
+      "regular_season": [
+        { "match_date": "2026-03-16", "line": 2, "partner": "Player 3", "result": "W", "score": "7-5, 6-4" },
+        { "match_date": "2026-03-23", "line": 2, "partner": "Player 3", "result": "L", "score": "3-6, 6-4, 4-6" },
+        { "match_date": "2026-03-30", "line": 2, "partner": "Player 3", "result": "W", "score": "6-2, 6-3" },
+        { "match_date": "2026-04-06", "line": 2, "partner": "Player 3", "result": "W", "score": "6-4, 6-4" },
+        { "match_date": "2026-04-13", "line": 2, "partner": "Player 6", "result": "W", "score": "6-3, 6-2" },
+        { "match_date": "2026-04-20", "line": 2, "partner": "Player 3", "result": "W", "score": "6-1, 6-2" },
+        { "match_date": "2026-04-27", "line": 2, "partner": "Player 3", "result": "L", "score": "6-7, 4-6" }
+      ]
+    },
+    {
+      "name": "Player 5",
+      "available_for_playoffs": true,
+      "notes": "",
+      "regular_season": [
+        { "match_date": "2026-03-16", "line": 3, "partner": "Player 6", "result": "L", "score": "4-6, 6-7" },
+        { "match_date": "2026-03-23", "line": 3, "partner": "Player 6", "result": "W", "score": "6-3, 6-4" },
+        { "match_date": "2026-03-30", "line": 3, "partner": "Player 6", "result": "W", "score": "6-4, 7-5" },
+        { "match_date": "2026-04-06", "line": 3, "partner": "Player 6", "result": "L", "score": "3-6, 4-6" },
+        { "match_date": "2026-04-13", "line": 3, "partner": "Player 3", "result": "L", "score": "4-6, 3-6" },
+        { "match_date": "2026-04-20", "line": 3, "partner": "Player 6", "result": "W", "score": "6-2, 6-3" },
+        { "match_date": "2026-04-27", "line": 3, "partner": "Player 6", "result": "W", "score": "7-5, 6-4" }
+      ]
+    },
+    {
+      "name": "Player 6",
+      "available_for_playoffs": true,
+      "notes": "",
+      "regular_season": [
+        { "match_date": "2026-03-16", "line": 3, "partner": "Player 5", "result": "L", "score": "4-6, 6-7" },
+        { "match_date": "2026-03-23", "line": 3, "partner": "Player 5", "result": "W", "score": "6-3, 6-4" },
+        { "match_date": "2026-03-30", "line": 3, "partner": "Player 5", "result": "W", "score": "6-4, 7-5" },
+        { "match_date": "2026-04-06", "line": 3, "partner": "Player 5", "result": "L", "score": "3-6, 4-6" },
+        { "match_date": "2026-04-13", "line": 2, "partner": "Player 4", "result": "W", "score": "6-3, 6-2" },
+        { "match_date": "2026-04-20", "line": 3, "partner": "Player 5", "result": "W", "score": "6-2, 6-3" },
+        { "match_date": "2026-04-27", "line": 3, "partner": "Player 5", "result": "W", "score": "7-5, 6-4" }
+      ]
+    },
+    {
+      "name": "Player 7",
+      "available_for_playoffs": true,
+      "notes": "",
+      "regular_season": [
+        { "match_date": "2026-03-16", "line": 4, "partner": "Player 8", "result": "W", "score": "6-2, 6-1" },
+        { "match_date": "2026-03-23", "line": 4, "partner": "Player 8", "result": "W", "score": "6-3, 6-2" },
+        { "match_date": "2026-03-30", "line": 4, "partner": "Player 8", "result": "L", "score": "4-6, 3-6" },
+        { "match_date": "2026-04-06", "line": 4, "partner": "Player 8", "result": "W", "score": "6-4, 6-3" },
+        { "match_date": "2026-04-13", "line": 4, "partner": "Player 8", "result": "L", "score": "2-6, 4-6" },
+        { "match_date": "2026-04-20", "line": 5, "partner": "Player 9", "result": "W", "score": "6-3, 6-1" },
+        { "match_date": "2026-04-27", "line": 4, "partner": "Player 8", "result": "W", "score": "6-4, 7-5" }
+      ]
+    },
+    {
+      "name": "Player 8",
+      "available_for_playoffs": true,
+      "notes": "",
+      "regular_season": [
+        { "match_date": "2026-03-16", "line": 4, "partner": "Player 7", "result": "W", "score": "6-2, 6-1" },
+        { "match_date": "2026-03-23", "line": 4, "partner": "Player 7", "result": "W", "score": "6-3, 6-2" },
+        { "match_date": "2026-03-30", "line": 4, "partner": "Player 7", "result": "L", "score": "4-6, 3-6" },
+        { "match_date": "2026-04-06", "line": 4, "partner": "Player 7", "result": "W", "score": "6-4, 6-3" },
+        { "match_date": "2026-04-13", "line": 4, "partner": "Player 7", "result": "L", "score": "2-6, 4-6" },
+        { "match_date": "2026-04-20", "line": 4, "partner": "Player 10", "result": "L", "score": "3-6, 2-6" },
+        { "match_date": "2026-04-27", "line": 4, "partner": "Player 7", "result": "W", "score": "6-4, 7-5" }
+      ]
+    },
+    {
+      "name": "Player 9",
+      "available_for_playoffs": true,
+      "notes": "",
+      "regular_season": [
+        { "match_date": "2026-03-16", "line": 5, "partner": "Player 10", "result": "W", "score": "6-3, 7-5" },
+        { "match_date": "2026-03-23", "line": 5, "partner": "Player 10", "result": "L", "score": "4-6, 6-7" },
+        { "match_date": "2026-03-30", "line": 5, "partner": "Player 10", "result": "W", "score": "6-2, 6-4" },
+        { "match_date": "2026-04-06", "line": 5, "partner": "Player 10", "result": "W", "score": "6-1, 6-3" },
+        { "match_date": "2026-04-13", "line": 5, "partner": "Player 10", "result": "L", "score": "3-6, 4-6" },
+        { "match_date": "2026-04-20", "line": 5, "partner": "Player 7", "result": "W", "score": "6-3, 6-1" },
+        { "match_date": "2026-04-27", "line": 5, "partner": "Player 10", "result": "W", "score": "6-4, 6-2" }
+      ]
+    },
+    {
+      "name": "Player 10",
+      "available_for_playoffs": true,
+      "notes": "",
+      "regular_season": [
+        { "match_date": "2026-03-16", "line": 5, "partner": "Player 9", "result": "W", "score": "6-3, 7-5" },
+        { "match_date": "2026-03-23", "line": 5, "partner": "Player 9", "result": "L", "score": "4-6, 6-7" },
+        { "match_date": "2026-03-30", "line": 5, "partner": "Player 9", "result": "W", "score": "6-2, 6-4" },
+        { "match_date": "2026-04-06", "line": 5, "partner": "Player 9", "result": "W", "score": "6-1, 6-3" },
+        { "match_date": "2026-04-13", "line": 5, "partner": "Player 9", "result": "L", "score": "3-6, 4-6" },
+        { "match_date": "2026-04-20", "line": 4, "partner": "Player 8", "result": "L", "score": "3-6, 2-6" },
+        { "match_date": "2026-04-27", "line": 5, "partner": "Player 9", "result": "W", "score": "6-4, 6-2" }
+      ]
+    },
+    {
+      "name": "Player 11",
+      "available_for_playoffs": true,
+      "notes": "Sub player",
+      "regular_season": [
+        { "match_date": "2026-04-06", "line": 5, "partner": "Player 12", "result": "W", "score": "6-2, 6-1" },
+        { "match_date": "2026-04-20", "line": 5, "partner": "Player 12", "result": "L", "score": "4-6, 3-6" }
+      ]
+    },
+    {
+      "name": "Player 12",
+      "available_for_playoffs": false,
+      "notes": "Unavailable for playoffs",
+      "regular_season": [
+        { "match_date": "2026-04-06", "line": 5, "partner": "Player 11", "result": "W", "score": "6-2, 6-1" },
+        { "match_date": "2026-04-20", "line": 5, "partner": "Player 11", "result": "L", "score": "4-6, 3-6" }
+      ]
+    }
+  ],
+  "opponent": {
+    "name": "",
+    "notes": "Fill in once you know your playoff opponent from the draw sheet",
+    "known_players": []
+  },
+  "captain_overrides": {
+    "notes": "Add any captain preferences here",
+    "forced_pairs": [],
+    "excluded_pairs": [],
+    "optimization_mode": "balanced"
+  }
+}
