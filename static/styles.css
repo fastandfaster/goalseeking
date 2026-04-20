@@ -699,11 +699,260 @@ label {
 }
 
 /* ── Responsive ── */
+
+/* Tablet breakpoint */
 @media (max-width: 768px) {
-  .header { flex-direction: column; gap: 16px; padding: 16px; }
+  .header {
+    flex-direction: column;
+    gap: 12px;
+    padding: 16px;
+  }
+
   .header-stats { gap: 16px; }
+
   .main { padding: 16px; }
+
   .form-row { flex-direction: column; }
-  .line-row { grid-template-columns: 30px 1fr 80px 60px; }
-  .line-row > :nth-child(2) { display: none; }
+
+  .chat-widget {
+    width: calc(100vw - 24px);
+    right: 12px;
+    bottom: 88px;
+    max-height: 60vh;
+  }
+}
+
+/* Phone breakpoint */
+@media (max-width: 480px) {
+  /* Header compact */
+  .header {
+    padding: 12px 16px;
+    gap: 10px;
+  }
+
+  .header-logo { font-size: 22px; }
+
+  .header h1 { font-size: 17px; }
+
+  .header-sub { font-size: 12px; }
+
+  .header-left { gap: 10px; }
+
+  .header-stats {
+    gap: 12px;
+    width: 100%;
+    justify-content: space-around;
+  }
+
+  .stat-value { font-size: 18px; }
+  .stat-label { font-size: 10px; }
+
+  /* Navigation — scrollable with larger touch targets */
+  .nav {
+    padding: 0 8px;
+    gap: 0;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .nav::-webkit-scrollbar { display: none; }
+
+  .nav-btn {
+    padding: 12px 14px;
+    font-size: 13px;
+    min-height: 48px;
+  }
+
+  .nav-btn .icon { margin-right: 4px; }
+
+  /* Main content */
+  .main { padding: 12px; }
+
+  .card {
+    padding: 16px;
+    border-radius: 10px;
+    margin-bottom: 12px;
+  }
+
+  .card h2 { font-size: 15px; }
+
+  /* Form controls — touch-friendly sizes */
+  select, input[type="text"], input[type="number"] {
+    padding: 12px 14px;
+    font-size: 16px; /* prevents iOS zoom on focus */
+    min-height: 44px;
+  }
+
+  .btn {
+    padding: 12px 20px;
+    font-size: 14px;
+    min-height: 48px;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .btn-sm {
+    padding: 10px 16px;
+    font-size: 13px;
+    min-height: 44px;
+  }
+
+  .form-group {
+    width: 100%;
+  }
+
+  .form-group select {
+    width: 100%;
+  }
+
+  /* Lineup cards — stack for readability */
+  .lineup-header {
+    padding: 14px 16px;
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-start;
+  }
+
+  .lineup-header > div:last-child {
+    text-align: left;
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+  }
+
+  .lineup-win { font-size: 24px; }
+  .lineup-win-label { font-size: 10px; }
+  .lineup-rank { font-size: 17px; }
+  .lineup-body { padding: 12px 14px; }
+
+  /* Line rows — vertical card layout on mobile */
+  .line-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 8px;
+    padding: 10px 0;
+    align-items: center;
+  }
+
+  .line-num {
+    flex: 0 0 32px;
+  }
+
+  .line-player {
+    flex: 1 1 auto;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .line-checker {
+    flex: 0 0 100%;
+    text-align: left;
+    padding-left: 32px;
+    font-size: 11px;
+    order: 5;
+  }
+
+  .line-winprob {
+    flex: 0 0 auto;
+    text-align: right;
+  }
+
+  /* Roster table — horizontal scroll with sticky first column */
+  .table-wrap {
+    margin: 0 -16px;
+    padding: 0 16px;
+  }
+
+  table { font-size: 12px; }
+
+  th { padding: 8px 10px; font-size: 10px; }
+  td { padding: 8px 10px; font-size: 12px; }
+
+  /* Availability grid — bigger touch targets */
+  .avail-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+
+  .avail-toggle {
+    padding: 12px;
+    font-size: 13px;
+    min-height: 44px;
+    border-radius: 10px;
+  }
+
+  /* What-If section */
+  .impact-value { font-size: 28px; }
+  .impact-box { padding: 20px 16px; }
+
+  /* Chat widget — full width on phones */
+  .chat-widget {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 100vw;
+    max-height: 85vh;
+    border-radius: 16px 16px 0 0;
+    border-bottom: none;
+  }
+
+  .chat-widget-messages {
+    max-height: 55vh;
+    min-height: 150px;
+  }
+
+  .chat-widget-input {
+    padding: 10px 12px;
+    padding-bottom: calc(10px + env(safe-area-inset-bottom, 0px));
+  }
+
+  .chat-widget-input input {
+    font-size: 16px !important; /* prevent iOS zoom */
+    min-height: 44px;
+  }
+
+  .chat-fab {
+    bottom: 16px;
+    right: 16px;
+    width: 56px;
+    height: 56px;
+  }
+
+  .chat-fab-icon { font-size: 24px; }
+
+  /* Explanation toggle — larger tap area */
+  .explain-toggle {
+    padding: 14px 16px;
+    font-size: 13px;
+    min-height: 44px;
+  }
+
+  .explain-content {
+    padding: 14px 16px;
+    font-size: 11px;
+  }
+
+  /* Badges */
+  .badge {
+    padding: 3px 8px;
+    font-size: 10px;
+  }
+
+  /* Confidence bar */
+  .conf-bar { width: 40px; }
+}
+
+/* Safe area support for notched phones */
+@supports (padding: env(safe-area-inset-bottom)) {
+  .chat-fab {
+    bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+  }
+
+  @media (max-width: 480px) {
+    .nav {
+      padding-left: env(safe-area-inset-left, 8px);
+      padding-right: env(safe-area-inset-right, 8px);
+    }
+  }
 }
