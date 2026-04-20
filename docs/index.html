@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ALTA Playoff Optimizer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="static/styles.css">
+</head>
+<body>
+
+  <!-- ── Header ── -->
+  <header class="header">
+    <div class="header-left">
+      <span class="header-logo">🎾</span>
+      <div>
+        <h1><span>ALTA</span> Playoff Optimizer</h1>
+        <div class="header-sub">
+          <span id="team-name">Loading...</span> · <span id="team-league"></span>
+        </div>
+      </div>
+    </div>
+    <div class="header-stats">
+      <div class="stat-box">
+        <div class="stat-value" id="team-rank">—</div>
+        <div class="stat-label">Rank</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-value" id="team-record">—</div>
+        <div class="stat-label">Record</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-value" id="team-roster-size">—</div>
+        <div class="stat-label">Players</div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ── Navigation ── -->
+  <nav class="nav">
+    <button class="nav-btn active" data-panel="generate" onclick="switchPanel('generate')">
+      <span class="icon">⚡</span>Generate
+    </button>
+    <button class="nav-btn" data-panel="roster" onclick="switchPanel('roster')">
+      <span class="icon">👥</span>Roster & Elo
+    </button>
+    <button class="nav-btn" data-panel="availability" onclick="switchPanel('availability'); loadAvailability()">
+      <span class="icon">✓</span>Availability
+    </button>
+    <button class="nav-btn" data-panel="whatif" onclick="switchPanel('whatif'); loadWhatIf()">
+      <span class="icon">🔮</span>What-If
+    </button>
+    <button class="nav-btn" data-panel="help" onclick="switchPanel('help'); openChat()">
+      <span class="icon">💡</span>Ask / Help
+    </button>
+  </nav>
+
+  <!-- ── Main Content ── -->
+  <main class="main">
+
+    <!-- Generate Panel -->
+    <div id="panel-generate" class="panel active">
+      <div class="card">
+        <div class="card-header">
+          <h2>⚡ Generate Optimal Lineup</h2>
+        </div>
+        <div class="form-row" style="margin-bottom:16px">
+          <div class="form-group">
+            <label>Mode</label>
+            <select id="sel-mode">
+              <option value="balanced" selected>Balanced — maximize expected wins</option>
+              <option value="aggressive">Aggressive — upset potential</option>
+              <option value="conservative">Conservative — protect the lead</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Show Top</label>
+            <select id="sel-topn">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3" selected>3</option>
+              <option value="5">5</option>
+            </select>
+          </div>
+          <button class="btn btn-primary" id="btn-generate" onclick="generateLineup()">
+            🎾 Generate Lineup
+          </button>
+        </div>
+        <p style="font-size:12px;color:var(--text-muted)">
+          Uses Elo-based performance model with line-adjusted ratings, chemistry bonuses,
+          and ALTA legality constraints (ascending checkers, 2/3 eligibility rule).
+        </p>
+      </div>
+
+      <div id="lineup-results"></div>
+    </div>
+
+    <!-- Roster Panel -->
+    <div id="panel-roster" class="panel">
+      <div class="card">
+        <div class="card-header">
+          <h2>👥 Roster & Elo Ratings</h2>
+        </div>
+        <p style="font-size:12px;color:var(--text-dim);margin-bottom:12px">
+          Line-adjusted Elo ratings · K=40 · Higher = stronger · ±RD = uncertainty
+        </p>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Player</th>
+                <th>Elo</th>
+                <th>±RD</th>
+                <th>Value</th>
+                <th>Win%</th>
+                <th>Matches</th>
+                <th>Confidence</th>
+                <th>Eligible Lines</th>
+              </tr>
+            </thead>
+            <tbody id="roster-body">
+              <tr><td colspan="9"><div class="loading-overlay"><span class="spinner"></span> Click to load roster</div></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- Availability Panel -->
+    <div id="panel-availability" class="panel">
+      <div class="card">
+        <div class="card-header">
+          <h2>✓ Player Availability</h2>
+          <span style="font-size:13px;color:var(--text-dim)" id="avail-count"></span>
+        </div>
+        <p style="font-size:12px;color:var(--text-dim);margin-bottom:16px">
+          Click a player to toggle availability. Unavailable players won't be included in lineup generation.
+        </p>
+        <div class="btn-group" style="margin-bottom:16px">
+          <button class="btn btn-secondary btn-sm" onclick="resetAvailability()">↺ Reset All Available</button>
+        </div>
+        <div class="avail-grid" id="avail-grid"></div>
+      </div>
+    </div>
+
+    <!-- What-If Panel -->
+    <div id="panel-whatif" class="panel">
+      <div class="card">
+        <div class="card-header">
+          <h2>🔮 What-If Scenario</h2>
+        </div>
+        <p style="font-size:12px;color:var(--text-dim);margin-bottom:16px">
+          Check the players to REMOVE from the scenario, then compare against your baseline.
+          Shows the impact on team win probability.
+        </p>
+        <h3>Remove players from scenario:</h3>
+        <div class="avail-grid" id="whatif-players" style="margin-bottom:16px"></div>
+        <button class="btn btn-primary" id="btn-whatif" onclick="runWhatIf()">
+          ⚡ Run Scenario
+        </button>
+      </div>
+      <div id="whatif-results"></div>
+    </div>
+
+    <!-- Help Panel -->
+    <div id="panel-help" class="panel">
+      <div class="card" style="text-align:center;padding:60px 24px">
+        <h2 style="margin-bottom:12px">💡 Ask a Question</h2>
+        <p style="color:var(--text-dim);margin-bottom:24px">Use the chat button in the bottom-right corner to ask about ALTA rules, strategy, Elo ratings, or anything else.</p>
+        <button class="btn btn-primary" onclick="openChat()">💬 Open Chat</button>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- ── Floating Chat Widget ── -->
+  <button class="chat-fab" id="chat-fab" onclick="toggleChat()" title="Ask a question">
+    <span class="chat-fab-icon" id="chat-fab-icon">💬</span>
+    <span class="chat-fab-badge" id="chat-fab-badge" style="display:none"></span>
+  </button>
+
+  <div class="chat-widget" id="chat-widget">
+    <div class="chat-widget-header">
+      <div class="chat-widget-title">
+        <span>🎾</span> ALTA Assistant
+      </div>
+      <button class="chat-widget-close" onclick="toggleChat()">✕</button>
+    </div>
+    <div class="chat-widget-messages" id="chat-messages"></div>
+    <div class="chat-widget-input">
+      <input type="text" id="chat-input"
+             placeholder="Ask about rules, strategy, Elo..."
+             onkeydown="if(event.key==='Enter')chatSend()">
+      <button class="chat-send-btn" id="btn-ask" onclick="chatSend()">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M22 2L11 13M22 2L15 22L11 13M22 2L2 9L11 13"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <script src="static/optimizer.js"></script>
+  <script src="static/app.js"></script>
+</body>
+</html>

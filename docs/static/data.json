@@ -1,0 +1,866 @@
+{
+  "team": {
+    "name": "PENHURST",
+    "captain": "GONG, MICHELLE",
+    "league": "2026 Spring Sunday Women C-8",
+    "roster_id": "379129",
+    "facility": "PENHURST",
+    "division_rank": 1,
+    "division_record": "22/25 (88%)",
+    "sets_won_pct": 80.4,
+    "games_won_pct": 67.4
+  },
+  "format": {
+    "lines": 5,
+    "type": "doubles",
+    "season_weeks": 7,
+    "matches_played": 5,
+    "playoff_start": "2026-05-03"
+  },
+  "players": [
+    {
+      "name": "BEISHER, SARAH",
+      "alta_number": "104-351-496",
+      "position": "Player",
+      "last_win_pct": 51.428,
+      "last_assigned_lf": "C-1",
+      "last_final_lf": "C-1",
+      "add_on": false,
+      "estimated_strength": 1.167,
+      "notes": "Mixed doubles experience at C-1 level; moderate win rate",
+      "alta_value": 1.167,
+      "season_record": "2-1",
+      "matches_played": 3,
+      "regular_season": [
+        {
+          "week": 1,
+          "match_date": "2026-03-15",
+          "line": 1,
+          "result": "W",
+          "opponent": "LEGACY PARK"
+        },
+        {
+          "week": 3,
+          "match_date": "2026-03-29",
+          "line": 1,
+          "result": "W",
+          "opponent": "HAMPTON WOODS"
+        },
+        {
+          "week": 5,
+          "match_date": "2026-04-12",
+          "line": 1,
+          "result": "L",
+          "opponent": "HAMPTON WOODS"
+        }
+      ],
+      "current_season_win_pct": 66.7,
+      "eligible_playoff_lines": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "name": "GONG, MICHELLE",
+      "alta_number": "104-470-252",
+      "position": "Captain",
+      "last_win_pct": 60.0,
+      "last_assigned_lf": "C-8",
+      "last_final_lf": "C-6",
+      "add_on": false,
+      "estimated_strength": 1.375,
+      "notes": "Captain; experienced at C-6/C-8 level",
+      "alta_value": 1.375,
+      "season_record": "3-1",
+      "matches_played": 4,
+      "regular_season": [
+        {
+          "week": 1,
+          "match_date": "2026-03-15",
+          "line": 1,
+          "result": "W",
+          "opponent": "LEGACY PARK"
+        },
+        {
+          "week": 2,
+          "match_date": "2026-03-22",
+          "line": 2,
+          "result": "W",
+          "opponent": "KENNWORTH TC"
+        },
+        {
+          "week": 3,
+          "match_date": "2026-03-29",
+          "line": 1,
+          "result": "W",
+          "opponent": "HAMPTON WOODS"
+        },
+        {
+          "week": 5,
+          "match_date": "2026-04-12",
+          "line": 1,
+          "result": "L",
+          "opponent": "HAMPTON WOODS"
+        }
+      ],
+      "current_season_win_pct": 75.0,
+      "eligible_playoff_lines": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "name": "HAN, XIAOLI",
+      "alta_number": "104-564-032",
+      "position": "Player",
+      "last_win_pct": null,
+      "last_assigned_lf": null,
+      "last_final_lf": null,
+      "add_on": true,
+      "add_on_date": "2026-03-06",
+      "estimated_strength": 5.25,
+      "notes": "Add-on; no ALTA history",
+      "alta_value": 5.25,
+      "season_record": "1-1",
+      "matches_played": 2,
+      "regular_season": [
+        {
+          "week": 2,
+          "match_date": "2026-03-22",
+          "line": 5,
+          "result": "W",
+          "opponent": "KENNWORTH TC"
+        },
+        {
+          "week": 3,
+          "match_date": "2026-03-29",
+          "line": 5,
+          "result": "L",
+          "opponent": "HAMPTON WOODS"
+        }
+      ],
+      "current_season_win_pct": 50.0,
+      "eligible_playoff_lines": [
+        5
+      ]
+    },
+    {
+      "name": "HE, YUENING",
+      "alta_number": "104-446-378",
+      "position": "Player",
+      "last_win_pct": 70.0,
+      "last_assigned_lf": "C-6",
+      "last_final_lf": "C-4",
+      "add_on": false,
+      "estimated_strength": 2.25,
+      "notes": "Strong; C-4 final level with 70% win rate",
+      "alta_value": 2.25,
+      "season_record": "4-0",
+      "matches_played": 4,
+      "regular_season": [
+        {
+          "week": 1,
+          "match_date": "2026-03-15",
+          "line": 3,
+          "result": "W",
+          "opponent": "LEGACY PARK"
+        },
+        {
+          "week": 2,
+          "match_date": "2026-03-22",
+          "line": 3,
+          "result": "W",
+          "opponent": "KENNWORTH TC"
+        },
+        {
+          "week": 3,
+          "match_date": "2026-03-29",
+          "line": 2,
+          "result": "W",
+          "opponent": "HAMPTON WOODS"
+        },
+        {
+          "week": 4,
+          "match_date": "2026-04-05",
+          "line": 1,
+          "result": "W",
+          "opponent": "KENNWORTH TC"
+        }
+      ],
+      "current_season_win_pct": 100.0,
+      "eligible_playoff_lines": [
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "name": "HU, YINI",
+      "alta_number": "104-499-174",
+      "position": "Player",
+      "last_win_pct": 91.428,
+      "last_assigned_lf": "C-5",
+      "last_final_lf": "C-1",
+      "add_on": false,
+      "estimated_strength": 4.5,
+      "notes": "Elite; 91.4% win rate, promoted C-5→C-1",
+      "alta_value": 4.5,
+      "season_record": "2-0",
+      "matches_played": 2,
+      "regular_season": [
+        {
+          "week": 2,
+          "match_date": "2026-03-22",
+          "line": 4,
+          "result": "W",
+          "opponent": "KENNWORTH TC"
+        },
+        {
+          "week": 5,
+          "match_date": "2026-04-12",
+          "line": 5,
+          "result": "W",
+          "opponent": "HAMPTON WOODS"
+        }
+      ],
+      "current_season_win_pct": 100.0,
+      "eligible_playoff_lines": [
+        5
+      ]
+    },
+    {
+      "name": "LI, JI",
+      "alta_number": "104-498-623",
+      "position": "Player",
+      "last_win_pct": 91.428,
+      "last_assigned_lf": "C-5",
+      "last_final_lf": "C-1",
+      "add_on": false,
+      "estimated_strength": 2.0,
+      "notes": "Elite; 91.4% win rate, promoted C-5→C-1. Same team as HU YINI",
+      "alta_value": 2.0,
+      "season_record": "4-0",
+      "matches_played": 4,
+      "regular_season": [
+        {
+          "week": 1,
+          "match_date": "2026-03-15",
+          "line": 2,
+          "result": "W",
+          "opponent": "LEGACY PARK"
+        },
+        {
+          "week": 2,
+          "match_date": "2026-03-22",
+          "line": 1,
+          "result": "W",
+          "opponent": "KENNWORTH TC"
+        },
+        {
+          "week": 4,
+          "match_date": "2026-04-05",
+          "line": 3,
+          "result": "W",
+          "opponent": "KENNWORTH TC"
+        },
+        {
+          "week": 5,
+          "match_date": "2026-04-12",
+          "line": 2,
+          "result": "W",
+          "opponent": "HAMPTON WOODS"
+        }
+      ],
+      "current_season_win_pct": 100.0,
+      "eligible_playoff_lines": [
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "name": "LIN, DAN",
+      "alta_number": "104-544-614",
+      "position": "Player",
+      "last_win_pct": null,
+      "last_assigned_lf": null,
+      "last_final_lf": null,
+      "add_on": false,
+      "estimated_strength": 3.8,
+      "notes": "New to ALTA",
+      "alta_value": 3.8,
+      "season_record": "5-0",
+      "matches_played": 5,
+      "regular_season": [
+        {
+          "week": 1,
+          "match_date": "2026-03-15",
+          "line": 5,
+          "result": "W",
+          "opponent": "LEGACY PARK"
+        },
+        {
+          "week": 2,
+          "match_date": "2026-03-22",
+          "line": 5,
+          "result": "W",
+          "opponent": "KENNWORTH TC"
+        },
+        {
+          "week": 3,
+          "match_date": "2026-03-29",
+          "line": 4,
+          "result": "W",
+          "opponent": "HAMPTON WOODS"
+        },
+        {
+          "week": 4,
+          "match_date": "2026-04-05",
+          "line": 2,
+          "result": "W",
+          "opponent": "KENNWORTH TC"
+        },
+        {
+          "week": 5,
+          "match_date": "2026-04-12",
+          "line": 3,
+          "result": "W",
+          "opponent": "HAMPTON WOODS"
+        }
+      ],
+      "current_season_win_pct": 100.0,
+      "eligible_playoff_lines": [
+        5
+      ]
+    },
+    {
+      "name": "LU, STEPHANIE",
+      "alta_number": "104-544-153",
+      "position": "Player",
+      "last_win_pct": null,
+      "last_assigned_lf": null,
+      "last_final_lf": null,
+      "add_on": false,
+      "estimated_strength": 4.5,
+      "notes": "New to ALTA",
+      "alta_value": 4.5,
+      "season_record": "2-0",
+      "matches_played": 2,
+      "regular_season": [
+        {
+          "week": 3,
+          "match_date": "2026-03-29",
+          "line": 4,
+          "result": "W",
+          "opponent": "HAMPTON WOODS"
+        },
+        {
+          "week": 5,
+          "match_date": "2026-04-12",
+          "line": 5,
+          "result": "W",
+          "opponent": "HAMPTON WOODS"
+        }
+      ],
+      "current_season_win_pct": 100.0,
+      "eligible_playoff_lines": [
+        5
+      ]
+    },
+    {
+      "name": "LUO, YUN",
+      "alta_number": "104-488-228",
+      "position": "Player",
+      "last_win_pct": null,
+      "last_assigned_lf": null,
+      "last_final_lf": null,
+      "add_on": false,
+      "estimated_strength": 4.5,
+      "notes": "No ALTA history",
+      "alta_value": 4.5,
+      "season_record": "0-1",
+      "matches_played": 1,
+      "regular_season": [
+        {
+          "week": 4,
+          "match_date": "2026-04-05",
+          "line": 4,
+          "result": "L",
+          "opponent": "KENNWORTH TC"
+        }
+      ],
+      "current_season_win_pct": 0.0,
+      "eligible_playoff_lines": [
+        4,
+        5
+      ]
+    },
+    {
+      "name": "REGAN, CATHY",
+      "alta_number": "104-478-317",
+      "position": "Player",
+      "last_win_pct": null,
+      "last_assigned_lf": null,
+      "last_final_lf": null,
+      "add_on": false,
+      "estimated_strength": 5.5,
+      "notes": "No ALTA history",
+      "alta_value": null,
+      "season_record": "0-0",
+      "matches_played": 0,
+      "regular_season": [],
+      "current_season_win_pct": null,
+      "eligible_playoff_lines": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "name": "SHU, WEIHONG",
+      "alta_number": "104-559-801",
+      "position": "Player",
+      "last_win_pct": null,
+      "last_assigned_lf": null,
+      "last_final_lf": null,
+      "add_on": true,
+      "add_on_date": "2026-03-04",
+      "estimated_strength": 4.5,
+      "notes": "Add-on; no ALTA history",
+      "alta_value": 4.5,
+      "season_record": "0-1",
+      "matches_played": 1,
+      "regular_season": [
+        {
+          "week": 4,
+          "match_date": "2026-04-05",
+          "line": 4,
+          "result": "L",
+          "opponent": "KENNWORTH TC"
+        }
+      ],
+      "current_season_win_pct": 0.0,
+      "eligible_playoff_lines": [
+        4,
+        5
+      ]
+    },
+    {
+      "name": "TONG, ZHAOHUI",
+      "alta_number": "104-554-367",
+      "position": "Player",
+      "last_win_pct": null,
+      "last_assigned_lf": null,
+      "last_final_lf": null,
+      "add_on": false,
+      "estimated_strength": 5.25,
+      "notes": "No ALTA history",
+      "alta_value": 5.25,
+      "season_record": "1-1",
+      "matches_played": 2,
+      "regular_season": [
+        {
+          "week": 3,
+          "match_date": "2026-03-29",
+          "line": 5,
+          "result": "L",
+          "opponent": "HAMPTON WOODS"
+        },
+        {
+          "week": 4,
+          "match_date": "2026-04-05",
+          "line": 5,
+          "result": "W",
+          "opponent": "KENNWORTH TC"
+        }
+      ],
+      "current_season_win_pct": 50.0,
+      "eligible_playoff_lines": [
+        5
+      ]
+    },
+    {
+      "name": "WANG, BIYE",
+      "alta_number": "104-561-758",
+      "position": "Player",
+      "last_win_pct": null,
+      "last_assigned_lf": null,
+      "last_final_lf": null,
+      "add_on": true,
+      "add_on_date": "2026-02-27",
+      "estimated_strength": 1.75,
+      "notes": "Add-on; no ALTA history",
+      "alta_value": 1.75,
+      "season_record": "3-0",
+      "matches_played": 3,
+      "regular_season": [
+        {
+          "week": 1,
+          "match_date": "2026-03-15",
+          "line": 2,
+          "result": "W",
+          "opponent": "LEGACY PARK"
+        },
+        {
+          "week": 2,
+          "match_date": "2026-03-22",
+          "line": 1,
+          "result": "W",
+          "opponent": "KENNWORTH TC"
+        },
+        {
+          "week": 4,
+          "match_date": "2026-04-05",
+          "line": 2,
+          "result": "W",
+          "opponent": "KENNWORTH TC"
+        }
+      ],
+      "current_season_win_pct": 100.0,
+      "eligible_playoff_lines": [
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "name": "WANG, JIN",
+      "alta_number": "104-544-164",
+      "position": "Player",
+      "last_win_pct": null,
+      "last_assigned_lf": null,
+      "last_final_lf": null,
+      "add_on": false,
+      "estimated_strength": 3.5,
+      "notes": "New to ALTA",
+      "alta_value": 3.5,
+      "season_record": "2-0",
+      "matches_played": 2,
+      "regular_season": [
+        {
+          "week": 1,
+          "match_date": "2026-03-15",
+          "line": 4,
+          "result": "W",
+          "opponent": "LEGACY PARK"
+        },
+        {
+          "week": 4,
+          "match_date": "2026-04-05",
+          "line": 3,
+          "result": "W",
+          "opponent": "KENNWORTH TC"
+        }
+      ],
+      "current_season_win_pct": 100.0,
+      "eligible_playoff_lines": [
+        4,
+        5
+      ]
+    },
+    {
+      "name": "XUE, SUMMER",
+      "alta_number": "104-490-984",
+      "position": "Co-Captain",
+      "last_win_pct": 91.428,
+      "last_assigned_lf": "C-5",
+      "last_final_lf": "C-1",
+      "add_on": false,
+      "estimated_strength": 2.333,
+      "notes": "Elite; Co-Captain; 91.4% win rate. FIELDS POND team with HU/LI",
+      "alta_value": 2.333,
+      "season_record": "3-0",
+      "matches_played": 3,
+      "regular_season": [
+        {
+          "week": 3,
+          "match_date": "2026-03-29",
+          "line": 3,
+          "result": "W",
+          "opponent": "HAMPTON WOODS"
+        },
+        {
+          "week": 4,
+          "match_date": "2026-04-05",
+          "line": 1,
+          "result": "W",
+          "opponent": "KENNWORTH TC"
+        },
+        {
+          "week": 5,
+          "match_date": "2026-04-12",
+          "line": 3,
+          "result": "W",
+          "opponent": "HAMPTON WOODS"
+        }
+      ],
+      "current_season_win_pct": 100.0,
+      "eligible_playoff_lines": [
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "name": "YAN, YUTING",
+      "alta_number": "104-543-882",
+      "position": "Player",
+      "last_win_pct": null,
+      "last_assigned_lf": null,
+      "last_final_lf": null,
+      "add_on": false,
+      "estimated_strength": 2.8,
+      "notes": "No ALTA history",
+      "alta_value": 2.8,
+      "season_record": "5-0",
+      "matches_played": 5,
+      "regular_season": [
+        {
+          "week": 1,
+          "match_date": "2026-03-15",
+          "line": 3,
+          "result": "W",
+          "opponent": "LEGACY PARK"
+        },
+        {
+          "week": 2,
+          "match_date": "2026-03-22",
+          "line": 2,
+          "result": "W",
+          "opponent": "KENNWORTH TC"
+        },
+        {
+          "week": 3,
+          "match_date": "2026-03-29",
+          "line": 3,
+          "result": "W",
+          "opponent": "HAMPTON WOODS"
+        },
+        {
+          "week": 4,
+          "match_date": "2026-04-05",
+          "line": 2,
+          "result": "W",
+          "opponent": "KENNWORTH TC"
+        },
+        {
+          "week": 5,
+          "match_date": "2026-04-12",
+          "line": 4,
+          "result": "W",
+          "opponent": "HAMPTON WOODS"
+        }
+      ],
+      "current_season_win_pct": 100.0,
+      "eligible_playoff_lines": [
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "name": "YANG, HONG",
+      "alta_number": "104-544-478",
+      "position": "Player",
+      "last_win_pct": null,
+      "last_assigned_lf": null,
+      "last_final_lf": null,
+      "add_on": false,
+      "estimated_strength": 3.75,
+      "notes": "Played Line 4D in weeks 1,2,3,5. Consistent starter",
+      "alta_value": 3.75,
+      "season_record": "4-0",
+      "matches_played": 4,
+      "regular_season": [
+        {
+          "week": 1,
+          "match_date": "2026-03-15",
+          "line": 4,
+          "result": "W",
+          "opponent": "LEGACY PARK"
+        },
+        {
+          "week": 2,
+          "match_date": "2026-03-22",
+          "line": 3,
+          "result": "W",
+          "opponent": "KENNWORTH TC"
+        },
+        {
+          "week": 3,
+          "match_date": "2026-03-29",
+          "line": 4,
+          "result": "W",
+          "opponent": "HAMPTON WOODS"
+        },
+        {
+          "week": 5,
+          "match_date": "2026-04-12",
+          "line": 4,
+          "result": "W",
+          "opponent": "HAMPTON WOODS"
+        }
+      ],
+      "current_season_win_pct": 100.0,
+      "eligible_playoff_lines": [
+        4,
+        5
+      ]
+    },
+    {
+      "name": "ZHANG, XINGXING",
+      "alta_number": "104-560-791",
+      "position": "Player",
+      "last_win_pct": null,
+      "last_assigned_lf": null,
+      "last_final_lf": null,
+      "add_on": true,
+      "add_on_date": "2026-02-27",
+      "estimated_strength": 5.0,
+      "notes": "Add-on; no ALTA history",
+      "alta_value": 5.0,
+      "season_record": "2-0",
+      "matches_played": 2,
+      "regular_season": [
+        {
+          "week": 1,
+          "match_date": "2026-03-15",
+          "line": 5,
+          "result": "W",
+          "opponent": "LEGACY PARK"
+        },
+        {
+          "week": 4,
+          "match_date": "2026-04-05",
+          "line": 5,
+          "result": "W",
+          "opponent": "KENNWORTH TC"
+        }
+      ],
+      "current_season_win_pct": 100.0,
+      "eligible_playoff_lines": [
+        5
+      ]
+    },
+    {
+      "name": "ZHANG, YINGHUA",
+      "alta_number": "104-544-377",
+      "position": "Player",
+      "last_win_pct": null,
+      "last_assigned_lf": null,
+      "last_final_lf": null,
+      "add_on": false,
+      "estimated_strength": 5.5,
+      "notes": "No ALTA history",
+      "alta_value": null,
+      "season_record": "0-0",
+      "matches_played": 0,
+      "regular_season": [],
+      "current_season_win_pct": null,
+      "eligible_playoff_lines": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    }
+  ],
+  "schedule": [
+    {
+      "week": 1,
+      "date": "2026-03-15",
+      "opponent": "LEGACY PARK (PALAZZO)",
+      "home_away": "away",
+      "result": "5-0"
+    },
+    {
+      "week": 2,
+      "date": "2026-03-22",
+      "opponent": "KENNWORTH TC (WARE)",
+      "home_away": "home",
+      "result": "5-0"
+    },
+    {
+      "week": 3,
+      "date": "2026-03-29",
+      "opponent": "HAMPTON WOODS (MCDONALD)",
+      "home_away": "away",
+      "result": "4-1"
+    },
+    {
+      "week": 4,
+      "date": "2026-04-05",
+      "opponent": "KENNWORTH TC (WARE)",
+      "home_away": "away",
+      "result": "4-1"
+    },
+    {
+      "week": 5,
+      "date": "2026-04-12",
+      "opponent": "HAMPTON WOODS (MCDONALD)",
+      "home_away": "home",
+      "result": "4-1"
+    },
+    {
+      "week": 6,
+      "date": "2026-04-19",
+      "opponent": "LEGACY PARK (PALAZZO)",
+      "home_away": "home",
+      "result": "pending"
+    },
+    {
+      "week": 7,
+      "date": "2026-04-26",
+      "opponent": null,
+      "result": "bye"
+    }
+  ],
+  "division_standings": [
+    {
+      "rank": 1,
+      "team": "PENHURST (GONG)",
+      "points": 22,
+      "of": 25,
+      "pct": 88.0
+    },
+    {
+      "rank": 2,
+      "team": "HAMPTON WOODS (MCDONALD)",
+      "points": 17,
+      "of": 25,
+      "pct": 68.0
+    },
+    {
+      "rank": 3,
+      "team": "KENNWORTH TC (WARE)",
+      "points": 7,
+      "of": 25,
+      "pct": 28.0
+    },
+    {
+      "rank": 4,
+      "team": "LEGACY PARK (PALAZZO)",
+      "points": 4,
+      "of": 25,
+      "pct": 16.0
+    }
+  ],
+  "data_quality_notes": [
+    "UPDATED with real lineup data from ALTA Schedule & Lineup Team View",
+    "Value column = real ALTA checker number (weighted avg line played)",
+    "Individual line assignments and W/L results per player per week verified",
+    "2/3 rule eligibility computed from actual line assignments",
+    "Partnership data still not available (who paired with whom)"
+  ]
+}
