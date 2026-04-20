@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: alta-playoff-optimizer
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app
+    envVars:
+      - key: RENDER
+        value: "true"
+      - key: PYTHON_VERSION
+        value: "3.12.0"

@@ -195,6 +195,8 @@ def api_whatif():
 if __name__ == "__main__":
     if len(sys.argv) > 1:
         DATA_FILE = sys.argv[1]
+    port = int(os.environ.get("PORT", 5000))
+    debug = os.environ.get("RENDER") is None  # disable debug on Render
     print(f"Starting ALTA Optimizer Web UI — data: {DATA_FILE}")
-    print(f"Open http://localhost:5000 in your browser")
-    app.run(debug=True, port=5000)
+    print(f"Open http://localhost:{port} in your browser")
+    app.run(debug=debug, host="0.0.0.0", port=port)
