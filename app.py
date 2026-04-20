@@ -11,7 +11,8 @@ import os
 _orig_reconfigure = getattr(sys.stdout, 'reconfigure', None)
 sys.stdout.reconfigure = lambda **kw: None
 
-from flask import Flask, render_template, jsonify, request, session
+from functools import wraps
+from flask import Flask, render_template, jsonify, request, session, redirect, url_for
 from lineup_optimizer import (
     PlayoffLineupAgent, EloEngine, LineupExplainer, ALTAHelpSystem,
     Player, Pairing, Lineup
@@ -25,6 +26,22 @@ app = Flask(__name__)
 app.secret_key = os.urandom(24)
 
 DATA_FILE = "alta_team_data.json"
+
+# ── Auth ──
+
+AUTH_USERNAME = "admin"
+AUTH_PASSWORD = "123"
+
+
+def login_required(f):
+    @wraps(f)
+    def decorated(*args, **kwargs):
+        if not session.get("logged_in"):
+            if request.is_json or request.path.startswith("/api/"):
+                return jsonify({"error": "Unauthorized"}), 401
+            return redirect(url_for("login"))
+        return f(*args, **kwargs)
+    return decorated
 
 # ── Helpers ──
 
@@ -102,12 +119,35 @@ def _lineup_to_dict(lineup: Lineup, rank: int) -> dict:
 
 # ── Routes ──
 
+@app.route("/login", methods=["GET", "POST"])
+def login():
+    if session.get("logged_in"):
+        return redirect(url_for("index"))
+    error = None
+    if request.method == "POST":
+        username = request.form.get("username", "")
+        password = request.form.get("password", "")
+        if username == AUTH_USERNAME and password == AUTH_PASSWORD:
+            session["logged_in"] = True
+            return redirect(url_for("index"))
+        error = "Invalid username or password."
+    return render_template("login.html", error=error)
+
+
+@app.route("/logout")
+def logout():
+    session.clear()
+    return redirect(url_for("login"))
+
+
 @app.route("/")
+@login_required
 def index():
     return render_template("index.html")
 
 
 @app.route("/api/team")
+@login_required
 def api_team():
     data = _load_data()
     team = data.get("team", {})
@@ -122,6 +162,7 @@ def api_team():
 
 
 @app.route("/api/roster")
+@login_required
 def api_roster():
     agent = _build_agent()
     players = sorted(agent.players.values(), key=lambda p: p.strength_number)
@@ -129,6 +170,7 @@ def api_roster():
 
 
 @app.route("/api/generate", methods=["POST"])
+@login_required
 def api_generate():
     body = request.get_json(force=True) or {}
     mode = body.get("mode", "balanced")
@@ -155,6 +197,7 @@ def api_generate():
 
 
 @app.route("/api/ask", methods=["POST"])
+@login_required
 def api_ask():
     body = request.get_json(force=True) or {}
     question = body.get("question", "")
@@ -163,6 +206,7 @@ def api_ask():
 
 
 @app.route("/api/whatif", methods=["POST"])
+@login_required
 def api_whatif():
     body = request.get_json(force=True) or {}
     mode = body.get("mode", "balanced")
