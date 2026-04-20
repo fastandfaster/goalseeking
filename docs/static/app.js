@@ -387,17 +387,58 @@ function escAttr(s) {
   return s.replace(/'/g, "\\'").replace(/"/g, '&quot;');
 }
 
-// ── Init ──
-document.addEventListener('DOMContentLoaded', async () => {
+// ── Auth ──
+const AUTH_USERNAME = 'admin';
+const AUTH_PASSWORD = '123';
+
+function handleLogin(e) {
+  e.preventDefault();
+  const username = document.getElementById('login-username').value;
+  const password = document.getElementById('login-password').value;
+  if (username === AUTH_USERNAME && password === AUTH_PASSWORD) {
+    sessionStorage.setItem('logged_in', 'true');
+    showApp();
+  } else {
+    document.getElementById('login-error').classList.add('visible');
+  }
+  return false;
+}
+
+function handleLogout() {
+  sessionStorage.removeItem('logged_in');
+  showLogin();
+}
+
+function showApp() {
+  document.getElementById('login-overlay').style.display = 'none';
+  document.getElementById('app-container').classList.remove('hidden');
+  initApp();
+}
+
+function showLogin() {
+  document.getElementById('login-overlay').style.display = 'flex';
+  document.getElementById('app-container').classList.add('hidden');
+  document.getElementById('login-error').classList.remove('visible');
+  document.getElementById('login-username').value = '';
+  document.getElementById('login-password').value = '';
+}
+
+async function initApp() {
   try {
     await loadData();
     loadTeam();
     switchPanel('generate');
     renderChat();
-    // Pre-build roster in background
     setTimeout(() => { state.roster = buildRoster(); }, 100);
   } catch (e) {
     document.querySelector('.main').innerHTML =
       `<div class="card"><p style="color:var(--red)">❌ Failed to load data: ${escHtml(e.message)}</p></div>`;
+  }
+}
+
+// ── Init ──
+document.addEventListener('DOMContentLoaded', () => {
+  if (sessionStorage.getItem('logged_in') === 'true') {
+    showApp();
   }
 });

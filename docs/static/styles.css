@@ -699,11 +699,302 @@ label {
 }
 
 /* ── Responsive ── */
+
+/* Tablet breakpoint */
 @media (max-width: 768px) {
-  .header { flex-direction: column; gap: 16px; padding: 16px; }
+  .header {
+    flex-direction: column;
+    gap: 12px;
+    padding: 16px;
+  }
+
   .header-stats { gap: 16px; }
+
   .main { padding: 16px; }
+
   .form-row { flex-direction: column; }
-  .line-row { grid-template-columns: 30px 1fr 80px 60px; }
-  .line-row > :nth-child(2) { display: none; }
+
+  .chat-widget {
+    width: calc(100vw - 24px);
+    right: 12px;
+    bottom: 88px;
+    max-height: 60vh;
+  }
+}
+
+/* Phone breakpoint */
+@media (max-width: 480px) {
+  .header {
+    padding: 12px 16px;
+    gap: 10px;
+  }
+
+  .header-logo { font-size: 22px; }
+
+  .header h1 { font-size: 17px; }
+
+  .header-sub { font-size: 12px; }
+
+  .header-left { gap: 10px; }
+
+  .header-stats {
+    gap: 12px;
+    width: 100%;
+    justify-content: space-around;
+  }
+
+  .stat-value { font-size: 18px; }
+  .stat-label { font-size: 10px; }
+
+  .nav {
+    padding: 0 8px;
+    gap: 0;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .nav::-webkit-scrollbar { display: none; }
+
+  .nav-btn {
+    padding: 12px 14px;
+    font-size: 13px;
+    min-height: 48px;
+  }
+
+  .nav-btn .icon { margin-right: 4px; }
+
+  .main { padding: 12px; }
+
+  .card {
+    padding: 16px;
+    border-radius: 10px;
+    margin-bottom: 12px;
+  }
+
+  .card h2 { font-size: 15px; }
+
+  select, input[type="text"], input[type="number"] {
+    padding: 12px 14px;
+    font-size: 16px;
+    min-height: 44px;
+  }
+
+  .btn {
+    padding: 12px 20px;
+    font-size: 14px;
+    min-height: 48px;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .btn-sm {
+    padding: 10px 16px;
+    font-size: 13px;
+    min-height: 44px;
+  }
+
+  .form-group { width: 100%; }
+  .form-group select { width: 100%; }
+
+  .lineup-header {
+    padding: 14px 16px;
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-start;
+  }
+
+  .lineup-header > div:last-child {
+    text-align: left;
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+  }
+
+  .lineup-win { font-size: 24px; }
+  .lineup-win-label { font-size: 10px; }
+  .lineup-rank { font-size: 17px; }
+  .lineup-body { padding: 12px 14px; }
+
+  .line-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 8px;
+    padding: 10px 0;
+    align-items: center;
+  }
+
+  .line-num { flex: 0 0 32px; }
+
+  .line-player {
+    flex: 1 1 auto;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .line-checker {
+    flex: 0 0 100%;
+    text-align: left;
+    padding-left: 32px;
+    font-size: 11px;
+    order: 5;
+  }
+
+  .line-winprob { flex: 0 0 auto; text-align: right; }
+
+  .table-wrap { margin: 0 -16px; padding: 0 16px; }
+  table { font-size: 12px; }
+  th { padding: 8px 10px; font-size: 10px; }
+  td { padding: 8px 10px; font-size: 12px; }
+
+  .avail-grid { grid-template-columns: 1fr 1fr; gap: 8px; }
+
+  .avail-toggle {
+    padding: 12px;
+    font-size: 13px;
+    min-height: 44px;
+    border-radius: 10px;
+  }
+
+  .impact-value { font-size: 28px; }
+  .impact-box { padding: 20px 16px; }
+
+  .chat-widget {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 100vw;
+    max-height: 85vh;
+    border-radius: 16px 16px 0 0;
+    border-bottom: none;
+  }
+
+  .chat-widget-messages { max-height: 55vh; min-height: 150px; }
+
+  .chat-widget-input {
+    padding: 10px 12px;
+    padding-bottom: calc(10px + env(safe-area-inset-bottom, 0px));
+  }
+
+  .chat-widget-input input {
+    font-size: 16px !important;
+    min-height: 44px;
+  }
+
+  .chat-fab { bottom: 16px; right: 16px; width: 56px; height: 56px; }
+  .chat-fab-icon { font-size: 24px; }
+
+  .explain-toggle { padding: 14px 16px; font-size: 13px; min-height: 44px; }
+  .explain-content { padding: 14px 16px; font-size: 11px; }
+  .badge { padding: 3px 8px; font-size: 10px; }
+  .conf-bar { width: 40px; }
+}
+
+/* Login screen */
+.login-overlay {
+  position: fixed;
+  inset: 0;
+  background: var(--bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  padding: 16px;
+}
+
+.login-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 40px 32px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: var(--shadow);
+  text-align: center;
+}
+
+.login-logo { font-size: 48px; margin-bottom: 12px; }
+
+.login-title {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.login-title span { color: var(--accent); }
+
+.login-sub {
+  color: var(--text-dim);
+  font-size: 13px;
+  margin-bottom: 28px;
+}
+
+.login-card .form-group {
+  text-align: left;
+  margin-bottom: 16px;
+}
+
+.login-card input {
+  width: 100%;
+  padding: 12px 14px;
+  background: var(--bg-input);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text);
+  font-size: 16px;
+  font-family: var(--font);
+  outline: none;
+  transition: border-color 0.2s;
+  min-height: 44px;
+}
+
+.login-card input:focus {
+  border-color: var(--border-focus);
+}
+
+.login-btn {
+  width: 100%;
+  padding: 12px 20px;
+  background: var(--accent);
+  color: white;
+  border: none;
+  border-radius: var(--radius-sm);
+  font-size: 15px;
+  font-weight: 600;
+  font-family: var(--font);
+  cursor: pointer;
+  min-height: 48px;
+  margin-top: 8px;
+  transition: background 0.2s;
+}
+
+.login-btn:hover { background: #3b5de7; }
+
+.login-error {
+  background: var(--red-dim);
+  border: 1px solid var(--red);
+  color: var(--red);
+  padding: 10px 14px;
+  border-radius: var(--radius-sm);
+  font-size: 13px;
+  margin-bottom: 16px;
+  display: none;
+}
+
+.login-error.visible { display: block; }
+
+.app-container.hidden { display: none; }
+
+/* Safe area support for notched phones */
+@supports (padding: env(safe-area-inset-bottom)) {
+  .chat-fab {
+    bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+  }
+
+  @media (max-width: 480px) {
+    .nav {
+      padding-left: env(safe-area-inset-left, 8px);
+      padding-right: env(safe-area-inset-right, 8px);
+    }
+  }
 }
